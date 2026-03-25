@@ -67,3 +67,31 @@ public class IETest {
         driver.quit();
     }
 }
+
+
+package com.practical1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChromeLauncher {
+
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.chrome.driver",
+                "D:\\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver wd = new ChromeDriver();
+
+        wd.get("http://demo.guru99.com/test/newtours/");
+
+        wd.findElement(By.name("userName")).sendKeys("admin123"); // username
+        wd.findElement(By.name("password")).sendKeys("admin123"); // password
+        wd.findElement(By.name("submit")).click(); // login button
+
+        // Optional: close browser
+        // wd.quit();
+    }
+}
+
+https://www.free-codecs.com/chromedriver_download.htm#google_vignette
